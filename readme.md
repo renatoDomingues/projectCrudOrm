@@ -16,6 +16,12 @@ Um ORM possui diversos métodos básicos que irão realizar a interação entre 
 node index.js
 ````
 
+## Database
+````
+- Xampp
+- HeidiSql
+````
+
 ## Estrutura
 ````
 Do app <=> routes <=enviam=> controllers <=gerenciam=> models
