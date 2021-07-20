@@ -9,17 +9,24 @@ Um ORM possui diversos métodos básicos que irão realizar a interação entre 
 ## Install
 ````
 * yarn add express ejs mysql2 sequelize@5
+* yarn add body-parser
 ````
 
 ## Terminal
 ````
 node index.js
+npm start
 ````
 
 ## Database
 ````
 - Xampp
 - HeidiSql
+````
+
+## Use page
+````
+localhost:3000
 ````
 
 ## Estrutura

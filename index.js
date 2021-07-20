@@ -3,16 +3,22 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const port = process.env.PORT || 3000
+const bodyParser = require('body-parser')
 
 const model = require('./models/index')
-const people = require('./routes/people')
+const pessoas = require('./routes/pessoas')
 
-app.get('/', (req, res) => res.render('Index'))
-
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
-app.use('/people', people)
+
+app.get('/', (req, res) => res.render('index'))
+app.use('/pessoas', pessoas)
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-app.listen(port, () => console.log('CRUD_ORM Listening...'))
+// app.listen(port, () => console.log('CRUD-ORM Listening...'))
+
+model.sequelize.sync({ force: true }).then(() => {
+  app.listen(port, () => console.log('CRUD-ORM Listening...'))
+})
